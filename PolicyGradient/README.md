@@ -36,7 +36,7 @@
 
 **Optional:**
 
-- [Reinforcement Learning: An Introduction](https://webdocs.cs.ualberta.ca/~sutton/book/bookdraft2016sep.pdf) - Chapter 11: Policy Gradient Methods (Under Construction)
+- [Reinforcement Learning: An Introduction](http://incompleteideas.net/sutton/book/bookdraft2017june.pdf) - Chapter 11: Policy Gradient Methods (Under Construction)
 - [Deterministic Policy Gradient Algorithms](http://jmlr.org/proceedings/papers/v32/silver14.pdf)
 - [Deterministic Policy Gradient Algorithms (Talk)](http://techtalks.tv/talks/deterministic-policy-gradient-algorithms/61098/)
 - [Continuous control with deep reinforcement learning](https://arxiv.org/abs/1509.02971)
@@ -50,13 +50,13 @@
 
 - REINFORCE with Baseline
   - Exercise
-  - [Solution](CliffWalk REINFORCE with Baseline Solution.ipynb)
+  - [Solution](CliffWalk%20REINFORCE%20with%20Baseline%20Solution.ipynb)
 - Actor-Critic with Baseline
   - Exercise
-  - [Solution](CliffWalk Actor-Critic Solution.ipynb)
+  - [Solution](CliffWalk%20Actor-Critic%20Solution.ipynb)
 - Actor-Critic with Baseline for Continuous Action Spaces
   - Exercise
-  - [Solution](Continuous MountainCar Actor-Critic Solution.ipynb)
+  - [Solution](Continuous%20MountainCar%20Actor-Critic%20Solution.ipynb)
 - Deterministic Policy Gradients for Continuous Action Spaces (WIP)
 - Deep Deterministic Policy Gradients (WIP)
 - Asynchronous Advantage Actor-Critic (A3C)
