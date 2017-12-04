@@ -15,10 +15,21 @@
 - Full backups are basically the Bellman equations turned into updates.
 - Policy Improvement: Given the correct state-value function for a policy we can act greedily with respect to it (i.e. pick the best action at each state). Then we are guaranteed to improve the policy or keep it fixed if it's already optimal.
 - Policy Iteration: Iteratively perform Policy Evaluation and Policy Improvement until we reach the optimal policy.
-- Value Iteration: Instead of doing multiple steps of Policy Evaluation to find the "correct" V(s) we only do a single step and improve the policy immediately. In practice, this converges faster.
+- Value Iteration: Instead of doing multiple steps of Policy Evaluation to find the "correct" V(s) we only do a single step and improve the policy immediately. In practice, this converges faster. 
 - Generalized Policy Iteration: The process of iteratively doing policy evaluation and improvement. We can pick different algorithms for each of these steps but the basic idea stays the same.
 - DP methods bootstrap: They update estimates based on other estimates (one step ahead).
 
+### My summary
+
+- Policy evaluation: Iterative the bellman's equation iteratively help us figure out the value fonction
+- Policy iteration: How do we improve our policy ?? Act greedily with respect to the value fonction.
+    - Start with a policy - evaluate the policy using the bellmas's equationi
+    - Improve the policy by activing greedily upon this value fonction
+    - Start again - Garanteed to converge to the optimal value function/policy
+- Value iteration - Same as before but we stop at k=1. Converge faster.
+   - In partise, for each state, update the value fonction according to the max in a one-step look ahead.
+
+     
 
 ### Lectures & Readings
 
