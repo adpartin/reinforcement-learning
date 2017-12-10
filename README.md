@@ -13,6 +13,7 @@ All code is written in Python 3 and uses RL environments from [OpenAI Gym](https
 ### Table of Contents
 
 - [Introduction to RL problems & OpenAI Gym](Introduction/)
+- [Multi-armed Bandits](BP/)
 - [MDPs and Bellman Equations](MDP/)
 - [Dynamic Programming: Model-Based RL, Policy Iteration and Value Iteration](DP/)
 - [Monte Carlo Model-Free Prediction & Control](MC/)
