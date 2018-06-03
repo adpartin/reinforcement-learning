@@ -33,7 +33,7 @@ env.display()
 
 
 
-![png](MBandit_files/MBandit_2_1.png)
+![png](/Users/cthorey/Documents/resources/reinforcement-learning/BP/MBandit_files/MBandit_2_1.png)
 
 - Objective is to maximize the expected total reward over some time period, for example, over 1000 action selections, or time steps.
 - If we call `q_a` the optical value for a specific action is the expected reward given than `a` is selected.
@@ -119,7 +119,7 @@ plt.legend()
 
 
 
-![png](MBandit_files/MBandit_5_1.png)
+![png](/Users/cthorey/Documents/resources/reinforcement-learning/BP/MBandit_files/MBandit_5_1.png)
 
 
 ##  Greedy agent: Non-Stationary problem
@@ -160,7 +160,7 @@ plt.legend()
 
 
 
-![png](MBandit_files/MBandit_8_1.png)
+![png](/Users/cthorey/Documents/resources/reinforcement-learning/BP/MBandit_files/MBandit_8_1.png)
 
 
 ## Greedy agent: Optimistic Initial Values
