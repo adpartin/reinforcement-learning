@@ -1,48 +1,38 @@
+FROM consol/ubuntu-xfce-vnc
 
-# Started with the Tensorflow image
-FROM b.gcr.io/tensorflow/tensorflow
+USER 0
 
-# Install open ai gym requirements and X11 stuff
-RUN apt-get update \
-    && apt-get install -y \
-        libav-tools \
-        python-pyglet \
-        python-opengl \
-        libpq-dev \
-        libjpeg-dev \
-        libboost-all-dev \
-        libsdl2-dev \
-        curl \
-        cmake \
-        swig \
-        wget \
-        unzip \
-        git \
-        xvfb \
-        x11vnc \
-        ratpoison \
-        xterm \
-        python-tk \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /root/.cache/pip/
+# set the workdir
+WORKDIR /tmp
 
-# Jupyter Notebook
-EXPOSE 8888
+# set environment
+ENV TERM xterm
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
-# TensorBoard
-EXPOSE 6006
+# install python and co
+RUN apt-get update
+RUN apt-get install -y python3-pip python3-dev
+RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade --user tensorflow
+RUN apt-get install -y git
+RUN apt-get update
+RUN apt-get install -y cmake zlib1g-dev xvfb libav-tools xorg-dev libsdl2-dev swig
 
-# Xvnc
-EXPOSE 5900
+RUN git clone https://github.com/openai/gym.git
+RUN pip install -e './gym[all]'
+RUN pip install pandas seaborn
+RUN pip install tqdm
 
-# Install the OpenAI Gym
-WORKDIR /opt
-RUN git clone https://github.com/openai/gym.git && pip install -e './gym[all]'
+RUN pip3 install jupyter
+RUN pip3 install ipython ipykernel
+COPY ./run_jupyter.sh /run_jupyter.sh
+COPY ./jupyter_notebook_config.py /headless/.jupyter/
 
-COPY "container-start.sh" "/opt/container-start.sh"
-COPY "xsession-start.sh" "/opt/xsession-start.sh"
-RUN chmod +x "/opt/container-start.sh" "/opt/xsession-start.sh"
+ENV VNC_PW=rl
+ENV VNC_RESOLUTION=1920x1080
+ENV PYTHONPATH=$PYTHONPATH:/workdir
+WORKDIR /workdir
 
-WORKDIR /root
-
-CMD ["/opt/container-start.sh"]
+ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
+CMD ["--wait"]

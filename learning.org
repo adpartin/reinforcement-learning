@@ -1,0 +1,8 @@
+* Multi-armed Bandits
+
+
+
+* ressources
+
+- https://github.com/andri27-ts/60_Days_RL_Challenge
+- https://lilianweng.github.io/lil-log/2018/02/19/a-long-peek-into-reinforcement-learning.html
