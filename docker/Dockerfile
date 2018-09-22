@@ -29,8 +29,19 @@ RUN pip3 install ipython ipykernel
 COPY ./run_jupyter.sh /run_jupyter.sh
 COPY ./jupyter_notebook_config.py /headless/.jupyter/
 
+RUN pip3 install torch torchvision
+
+#open ai baseline
+WORKDIR /opt
+RUN apt-get update &&\
+    apt-get install -y libopenmpi-dev
+
+RUN git clone https://github.com/openai/baselines.git && \
+    cd baselines && \
+    pip install -e .
+
 ENV VNC_PW=rl
-ENV VNC_RESOLUTION=1920x1080
+ENV VNC_RESOLUTION=1440x900
 ENV PYTHONPATH=$PYTHONPATH:/workdir
 WORKDIR /workdir
 
