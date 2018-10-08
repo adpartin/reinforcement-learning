@@ -1,7 +1,7 @@
 * Multi-armed Bandits
 
 
-
+  
 * ressources
 
 - http://rail.eecs.berkeley.edu/deeprlcourse/

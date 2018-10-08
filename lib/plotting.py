@@ -41,7 +41,7 @@ def plot_cost_to_go_mountain_car(env, estimator, num_tiles=20):
 
 
 def plot_surface(X, Y, Z, title):
-    fig = plt.figure(figsize=(20, 10))
+    fig = plt.figure(figsize=(10, 5))
     ax = fig.add_subplot(111, projection='3d')
     surf = ax.plot_surface(
         X,
@@ -58,6 +58,7 @@ def plot_surface(X, Y, Z, title):
     ax.set_title(title)
     ax.view_init(ax.elev, -120)
     fig.colorbar(surf)
+    plt.show()
 
 
 def plot_value_function(V, title="Value Function"):
@@ -78,7 +79,6 @@ def plot_value_function(V, title="Value Function"):
                                   np.dstack([X, Y]))
     Z_ace = np.apply_along_axis(lambda _: V[(_[0], _[1], True)], 2,
                                 np.dstack([X, Y]))
-    return X, Y, Z_noace
     plot_surface(X, Y, Z_noace, "{} (No Usable Ace)".format(title))
     plot_surface(X, Y, Z_ace, "{} (Usable Ace)".format(title))
 
